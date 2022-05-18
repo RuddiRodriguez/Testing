@@ -95,7 +95,7 @@ def main():
     # Question 4: Dimensionality after OHE
     df_january = pre_processing(df_january)
     X_train, y_train = get_x_y(df_january)
-    X_train_scaled = feature_transformation(X_train, cat_features,dir_name)
+    X_train_scaled = feature_transformation(X_train, cat_features, dir_name)
 
     df_february = pre_processing(df_february)
     X_valid, y_valid = get_x_y(df_february)
@@ -111,7 +111,10 @@ def main():
     # Question 5 : RMSE of the trained model
     regressor = LinearRegression()
     model = regressor.fit(X_train_scaled, y_train)
+    joblib.dump(model, os.path.join(
+        dir_name, 'Model', 'Linear_model.joblib'))
     predictions = model.predict(X_train_scaled)
+
     rmse = sqrt(mean_squared_error(y_train, predictions))
     print("RMSE of the trained model is {:.2f}".format(rmse))
 

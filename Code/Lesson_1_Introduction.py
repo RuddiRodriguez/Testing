@@ -13,8 +13,8 @@ warnings.filterwarnings("ignore")
 
 
 def getting_data():
-    df_january = pd.read_parquet (r'D:\Python\Projects\NL_Automated_Reports\Testing\Data\fhv_tripdata_2021-01.parquet')
-    df_february = pd.read_parquet (r'D:\Python\Projects\NL_Automated_Reports\Testing\Data\fhv_tripdata_2021-02.parquet')
+    df_january = pd.read_parquet (r'Data\fhv_tripdata_2021-01.parquet')
+    df_february = pd.read_parquet (r'Data\fhv_tripdata_2021-02.parquet')
     df = pd.concat([df_january, df_february])
     return df
 

@@ -75,9 +75,9 @@ def main():
     print("Fraction of missing values is {}".format(df_january.isnull().sum()*100/df_january.shape[0]))
     
     # Question 4: Dimensionality after OHE
-    print("Dimensionality after OHE is {}".format(X_valid_scaled.shape[1]))
+    print("Dimensionality after OHE is {}".format(X_train_scaled.shape[1]))
     
-    # Question 4 : RMSE of the trained model
+    # Question 5 : RMSE of the trained model
     regressor = LinearRegression()
     model = regressor.fit(X_train_scaled, y_train)
     predictions = model.predict(X_train_scaled)
@@ -85,9 +85,9 @@ def main():
     print("RMSE of the trained model is {:.2f}".format(rmse))
     
     # Question 6: RMSE on validation
-    predictions = model.predict(X_valid_scaled)
-    rmse = sqrt(mean_squared_error(y_valid, predictions))
-    print("RMSE on validation is {:.2f}".format(rmse))
+    #predictions = model.predict(X_valid_scaled)
+    #rmse = sqrt(mean_squared_error(y_valid, predictions))
+    #print("RMSE on validation is {:.2f}".format(rmse))
 
 
    

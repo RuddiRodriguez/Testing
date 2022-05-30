@@ -130,6 +130,7 @@ venv.bak/
 mlvenv/
 mlflow/
 mlopsvenv/
+mlruns/
 
 # Spyder project settings
 .spyderproject

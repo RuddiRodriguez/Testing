@@ -6,6 +6,9 @@ import mlflow
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
+mlflow.set_tracking_uri(r"file\\\D:\Python\Projects\NL_Automated_Reports\Testing\mlflow")
+run_name = mlflow.set_experiment("Lesson2_Experiment_tracking_Homework_Q3")
+
 
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
@@ -13,8 +16,7 @@ def load_pickle(filename: str):
 
 
 def run(data_path):
-    mlflow.set_tracking_uri(r"file\\\D:\Python\Projects\NL_Automated_Reports\Testing\mlflow")
-    run_name = mlflow.set_experiment("Lesson2_Experiment_tracking_Homework_Q3")
+    
     
     with mlflow.start_run(run_name=run_name,nested=True):
         

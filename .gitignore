@@ -131,6 +131,7 @@ mlvenv/
 mlflow/
 mlopsvenv/
 mlruns/
+zoomcampvenv/
 
 # Spyder project settings
 .spyderproject
